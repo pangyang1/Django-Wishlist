@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login & Reg | Home</title>
+  </head>
+  <body>
+    <h1>Registration</h1>
+    <form action="{% url 'login:register' %}" method="POST">
+      {% csrf_token %}
+      <p>Name:<input type="text" name="name"></p>
+      <p>Username:<input type="text" name="username"></p>
+      <p>Password:<input type="password" value="password" name="password"></p>
+      <p>Confirm Password:<input type="password" value="password" name="confirm_password"></p>
+      <p>Hire Date:<input id="date" type="date" name="hire_date"></p>
+      <input type="submit" name="submit" value="Register">
+    </form>
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <form action="{% url 'login:login' %}" method="POST">
+      {% csrf_token %}
+      <p>Username:<input type="text" name="username"></p>
+      <p>Password:<input type="password" value="password" name="password"></p>
+      <input type="submit" value="Login">
+    </form>
+  </body>
+</html>

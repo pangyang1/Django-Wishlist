@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+  </head>
+  <body>
+
+      <h1>Success! Welcome, {{ user.name }}</h1>
+
+    <p>Your Wish List:</p>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Added by</th>
+        <th>Date Added</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>{{ item.item }} </td>
+        <td></td>
+        <td>{{ item.created_at }}</td>
+        <td></a>
+        </td>
+      </tr>
+    </table>
+    <p>Other User Wish List:</p>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Added by</th>
+        <th>Date Added</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <a href="{% url 'wish:create' %}">Add Item</a>
+    <a href="{% url 'login:index' %}">Log Out</a>
+  </body>
+</html>

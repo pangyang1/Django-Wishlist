@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ttem</title>
+  </head>
+  <body>
+    <h1>{{ item.item }}</h1>
+    <p>Users who added this product/item under their wish list</p>
+    <p>{{ user.name }}</p>
+    <a href="{% url 'wish:dashboard' %}">Home</a>
+    <a href="{% url 'login:index' %}">Logout</a>
+  </body>
+</html>
